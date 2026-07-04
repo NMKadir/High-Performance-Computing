@@ -1,0 +1,6 @@
+1. MPI_Bcast    -> One to all         -> MPI_Bcast(&buffer, count, dtype, root, MPI_COMM_WORLD)
+2. MPI_Reduce   -> All to one(Master) -> MPI_Reduce(&sendbuf, &recvbuf, count, datatype, op, root, MPI_COMM_WORLD)
+3. MPI_Barrier  -> Sync               -> MPI_Barrier(MPI_COMM_WORLD)
+4. MPI_Scatter  -> One to all         -> MPI_Scatter(sendbuf, sendcount, datatype, recvbuf, recvcount, datatype, root, MPI_COMM_WORLD)
+5. MPI_Gather   -> All to one         -> MPI_Gather(sendbuf, sendcount, datatype, recvbuf, recvcount, datatype, root, MPI_COMM_WORLD)
+6. MPI_Allreduce-> All to all         -> MPI_Allreduce(&sendbuf, &recvbuf, count, datatype, op, MPI_COMM_WORLD)
