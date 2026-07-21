@@ -1,2 +1,2 @@
 # High Performance Computing
-Here you will get the codes for openMP, MPI and CUDA C.
+Here you will get the codes for MPI and CUDA C++.
