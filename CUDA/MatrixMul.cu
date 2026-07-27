@@ -21,7 +21,7 @@ int main(){
     for(int i=0; i<N; i++){
         for(int j=0; j<N; j++){
             A[i*N+j] = 1.0;
-            B[i*N+j] = 2.0;
+            B[i*N+j] = 3.0;
         }
     }
     double *A_d, *B_d, *C_d;
@@ -37,16 +37,24 @@ int main(){
     double tolerance = 1.0e-14;
     for(int i=0; i<N; i++){
         for(int j=0; j<N; j++){
-            if(fabs(C[i*N+j] - 2.0*N) > tolerance){
+            if(fabs(C[i*N+j] - 3.0*N) > tolerance){
                 printf("\nError: value of C[%d][%d] = %lf instead of %lf\n\n", i, j, C[i*N+j], 2.0*N);
                 exit(1);
             }
         }
     }
     printf("Matrix multiplication completed successfully!\n");
+    std::cout << "First 10 results for show:" << "\n";
+    for(int i=0; i<1; i++){
+        for(int j=0; j<10; j++){
+            std::cout<<C[i*N+j]<< " ";
+        }
+        std::cout<<"\n";
+    }
     free(A);
     free(B);
     free(C);
+
     cudaFree(A_d);
     cudaFree(B_d);
     cudaFree(C_d);
